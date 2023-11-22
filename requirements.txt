@@ -8,3 +8,4 @@ certifi
 flask_cors
 six
 gunicorn
+python-dotenv
