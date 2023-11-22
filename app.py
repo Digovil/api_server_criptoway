@@ -181,6 +181,7 @@ node_identifier = str(uuid4()).replace('-', '')
 
 # Instantiate the Blockchain
 blockchain = Blockchain('192.168.20.36', '5000')
+blockchain.nodes.add("http://192.168.20.24:5001")
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
@@ -294,16 +295,7 @@ def update_chain():
 
 
 if __name__ == '__main__':
-    from argparse import ArgumentParser
 
-    parser = ArgumentParser()
-    parser.add_argument('-p', '--port', default=5000, type=int, help='puerto para escuchar')
-    parser.add_argument('--connect', nargs='+', help='direcciones de nodos a los que conectarse (e.g., --connect http://node1:5000 http://node2:5001)')
-    args = parser.parse_args()
-    port = args.port
-    
 
-    blockchain.nodes.add("http://192.168.20.24:5001")
-
-    app.run(host='0.0.0.0', port=port)
+    app.run()
 
