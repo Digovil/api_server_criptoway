@@ -180,8 +180,8 @@ CORS(app, origins='*')
 node_identifier = str(uuid4()).replace('-', '')
 
 # Instantiate the Blockchain
-blockchain = Blockchain('192.168.20.36', '5000')
-blockchain.nodes.add("http://192.168.20.24:5001")
+blockchain = Blockchain(os.environ.get('HOST'), os.environ.get('PORT'))
+blockchain.nodes.add(f"{os.environ.get('HOST_NODO2')}:{os.environ.get('PORT_NODO2')}")
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
