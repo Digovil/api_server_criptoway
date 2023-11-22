@@ -7,6 +7,9 @@ from urllib.parse import urlparse
 from flask import Flask, jsonify, request
 import requests
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Blockchain:
     def __init__(self, ip, port):
