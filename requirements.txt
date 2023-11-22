@@ -1,0 +1,14 @@
+hashlib
+json
+os
+time
+uuid
+Flask
+Werkzeug
+Jinja2
+itsdangerous
+click
+requests
+certifi
+flask_cors
+six
