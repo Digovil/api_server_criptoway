@@ -90,7 +90,7 @@ class Blockchain:
             
     def register_node_sender(self, address):
         parsed_url = urlparse(address)
-        self.nodes.add(f"http://{parsed_url.scheme}:{parsed_url.path}")
+        self.nodes.add(f"https://{parsed_url.scheme}:{parsed_url.path}")
 
 
     def valid_chain(self, chain):
